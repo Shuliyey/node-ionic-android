@@ -48,5 +48,4 @@ RUN apt-get remove --purge --auto-remove -y unzip && \
   apt-get autoclean && apt-get --purge -y autoremove && \
   rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-
 CMD ["bash"]
