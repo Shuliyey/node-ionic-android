@@ -24,7 +24,7 @@ RUN apt-get update && apt-get install unzip -y --no-install-recommends && \
     http://download.oracle.com/otn-pub/java/jce/${VERSION}/jce_policy-${VERSION}.zip \
     -o /tmp/jce_policy-${VERSION}.zip && \
   unzip /tmp/jce_policy-${VERSION}.zip -d /tmp && \
-  cp -v /tmp/UnlimitedJCEPolicyJDK${VERSION}/*.jar "${JRE_HOME}"/lib/security/ \
+  cp -v /tmp/UnlimitedJCEPolicyJDK${VERSION}/*.jar "${JRE_HOME}"/lib/security/
 
 RUN update-alternatives --install "/usr/bin/java" "java" "${JRE_HOME}/bin/java" 1 && \
   update-alternatives --install "/usr/bin/javaws" "javaws" "${JRE_HOME}/bin/javaws" 1 && \
