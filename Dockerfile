@@ -21,10 +21,10 @@ RUN apt-get update && apt-get install unzip -y --no-install-recommends && \
   # Install Java Unlimited Encryption
   curl --silent --location --retry 3 --cacert /etc/ssl/certs/GeoTrust_Global_CA.pem \
     --header "Cookie: oraclelicense=accept-securebackup-cookie;" \
-    http://download.oracle.com/otn-pub/java/jce/8/jce_policy-8.zip \
-    -o /tmp/jce_policy-8.zip && \
-  unzip /tmp/jce_policy-8.zip -d /tmp && \
-  cp -v /tmp/UnlimitedJCEPolicyJDK8/*.jar "${JRE_HOME}"/lib/security/ && \
+    http://download.oracle.com/otn-pub/java/jce/${VERSION}/jce_policy-${VERSION}.zip \
+    -o /tmp/jce_policy-${VERSION}.zip && \
+  unzip /tmp/jce_policy-${VERSION}.zip -d /tmp && \
+  cp -v /tmp/UnlimitedJCEPolicyJDK${VERSION}/*.jar "${JRE_HOME}"/lib/security/ && \
 
 RUN update-alternatives --install "/usr/bin/java" "java" "${JRE_HOME}/bin/java" 1 && \
   update-alternatives --install "/usr/bin/javaws" "javaws" "${JRE_HOME}/bin/javaws" 1 && \
